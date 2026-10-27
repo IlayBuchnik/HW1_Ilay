@@ -3,6 +3,7 @@ typedef struct Node
 	unsigned int data;
 	Node* next;
 }Node;
-void removeElement(Node* head);
-void addElement(Node* head, unsigned int data);
+
+Node* addElement(Node* head, unsigned int data);
+Node* removeElement(Node* head);
 void printList(Node* head);

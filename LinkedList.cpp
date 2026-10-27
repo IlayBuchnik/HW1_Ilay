@@ -1,40 +1,47 @@
 #include "LinkedList.h"
 #include <iostream>
-void removeElement(Node* head)
+Node* addElement(Node* head, unsigned int data)
 {
+	Node* current;
 	if (head == nullptr)
 	{
-		return;
+		head = new Node;
+		head->data = data;
+		head->next = nullptr;
+		return head;
 	}
+	current = head;
+	while (current->next != nullptr)
+	{
+		current = current->next;
+	}
+	current->next = new Node;
+	current->next->data = data;
+	current->next->next = nullptr;
+	return head;
+}
+Node* removeElement(Node* head)
+{
+	Node* current;
 
+	if (head == nullptr)
+	{
+		return nullptr;
+	}
 	if (head->next == nullptr)
 	{
 		delete head;
-		head = nullptr;
-		return;
+		return nullptr;
+	}
+	current = head;
+	while (current->next->next != nullptr)
+	{
+		current = current->next;
 	}
 
-	while (head->next->next != nullptr) // cycling to the element that's before the last
-	{
-		head = head->next;
-	}
-	delete head->next;
-	head->next = nullptr;
-}
-void addElement(Node* head, unsigned int data)
-{
-	if (head == nullptr)
-	{
-		return;
-	}
-
-	while (head->next != nullptr)
-	{
-		head = head->next;
-	}
-	head->next = new Node;
-	head->next->data = data;
-	head->next->next = nullptr;
+	delete current->next;
+	current->next = nullptr;
+	return head;
 }
 void printList(Node* head)
 {

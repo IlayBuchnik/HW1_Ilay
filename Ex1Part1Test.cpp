@@ -12,6 +12,7 @@ std::string removeElementsAndGetPrintedQueue(Queue* q)
 	{
 		output << dequeue(q) << " ";
 	}
+	// removing the last letter (space)
 	std::string outputString = output.str();
 	outputString = outputString.substr(0, outputString.length() - 1);
 	return outputString;
@@ -23,6 +24,7 @@ bool test1()
 
 	try
 	{
+		// check basic data structure functions
 		cout << 
 			"*******************************\n"  << 
 			"Test 1 - basic queue functions\n" << 
@@ -38,6 +40,7 @@ bool test1()
 		}
 		catch(...)
 		{
+			// queue failed to initialize - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			system("./printMessage 1111");
 			cout << " \n" << endl;
@@ -54,6 +57,7 @@ bool test1()
 		}
 		else
 		{
+			// queue is not empty - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
@@ -81,6 +85,7 @@ bool test1()
 		}
 		else
 		{
+			// queue is not full - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n"
 				<< "Got     : " << (full ? "true" : "false") << " \n";
@@ -149,6 +154,7 @@ bool test2()
 
 	try
 	{
+		// check basic data structure functions
 		cout <<
 			"*******************************\n" <<
 			"Test 2 - two queues\n" <<
@@ -164,6 +170,7 @@ bool test2()
 		}
 		catch(...)
 		{
+			// queue failed to initialize - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			system("./printMessage 1111");
 			cout << " \n" << endl;
@@ -189,6 +196,7 @@ bool test2()
 		}
 		catch(...)
 		{
+			// queue failed to initialize - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			system("./printMessage 1121");
 			cout << " \n" << endl;
@@ -203,6 +211,7 @@ bool test2()
 		}
 		else
 		{
+			// queue is not empty - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
@@ -229,6 +238,7 @@ bool test2()
 		}
 		else
 		{
+			// queue is not full - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n"
 				<< "Got     : " << (full ? "true" : "false") << " \n";
@@ -287,6 +297,7 @@ bool test2()
 		}
 		else
 		{
+			// queue is empty - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: false\n"
 				<< "Got     : " << (empty ? "true" : "false") << " \n" << endl;
@@ -332,9 +343,30 @@ bool test2()
 
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-	bool result = test2();
-	cout << (result == 0 ? "\033[1;32m \n****** Part 1 Test 2 Passed ******\033[0m\n \n" : "\033[1;31mPart 1 Test 2 Failed\033[0m\n \n") << endl;
-	return result;
+	// check num of arguments
+	if (argc < 2 || argc > 3)
+	{
+		std::cerr <<
+			"Wrong number of main arguments\n" <<
+			"Expected 1 argument - test number\n" <<
+			"Usage example: ./Ex1Part1Test 3" << std::endl;
+		exit(3);
+	}
+
+	if (atoi(argv[1]) == 1)
+	{
+		bool result = test1();
+		cout << (result == 0 ? "\033[1;32m \n****** Part 1 Test 1 Passed ******\033[0m\n \n" : "\033[1;31mPart 1 Test 1 Failed\033[0m\n \n") << endl;
+		return result;
+	}
+	else if (atoi(argv[1]) == 2)
+	{
+		bool result = test2();
+		cout << (result == 0 ? "\033[1;32m \n****** Part 1 Test 2 Passed ******\033[0m\n \n" : "\033[1;31mPart 1 Test 1 Failed\033[0m\n \n") << endl;
+		return result;
+	}
+
+	return 0;
 }

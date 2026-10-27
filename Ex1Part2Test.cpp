@@ -15,6 +15,7 @@ std::string popElementsAndGetPrintedStack(Stack* s)
 	{
 		output << pop(s) << " ";
 	}
+	// removing the last letter (space)
 	std::string outputString = output.str();
 	outputString = outputString.substr(0, outputString.length() - 1);
 	return outputString;
@@ -22,6 +23,7 @@ std::string popElementsAndGetPrintedStack(Stack* s)
 
 int test1()
 {
+	// check basic data structure functions
 	cout <<
 		"*******************************\n" <<
 		"Test 3 - basic stack functions\n" <<
@@ -39,6 +41,7 @@ int test1()
 		}
 		catch(...)
 		{
+				// stack failed to initialize - test failed
 				cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 				system("./printMessage 1211");
 				cout << " \n" << endl;
@@ -54,6 +57,7 @@ int test1()
 		}
 		else
 		{
+			// stack is not empty - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
@@ -121,6 +125,7 @@ int test1()
 
 int test2()
 {
+	// check basic data structure functions
 	cout <<
 		"*******************************\n" <<
 		"Test 3 - More Stack tests\n" <<
@@ -136,6 +141,7 @@ int test2()
 		}
 		catch(...)
 		{
+				// stack failed to initialize - test failed
 				cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 				system("./printMessage 1211");
 				cout << " \n" << endl;
@@ -152,6 +158,7 @@ int test2()
 		}
 		else
 		{
+			// stack is not empty - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
@@ -206,6 +213,7 @@ int test2()
 		}
 		else
 		{
+			// stack is empty - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: false\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
@@ -244,6 +252,7 @@ int test2()
 		}
 		else
 		{
+			// stack is not empty - test failed
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
@@ -295,6 +304,7 @@ std::string arrayToString(int numbers[], int size)
 
 bool test3()
 {
+	// check basic data structure functions
 	cout <<
 		"*******************************\n" <<
 		"Test 4 - utils\n" <<
@@ -341,9 +351,37 @@ bool test3()
 	return 0;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-	int result = test1();
-	cout << (result == 0 ? "\033[1;32m \n****** Part 3 Test 1 Passed ******\033[0m\n \n" : "\033[1;31mPart 3 Test 1 Failed\033[0m\n \n") << endl;
+	int result;
+	// check num of arguments
+	if (argc < 2 || argc > 3)
+	{
+		std::cerr <<
+			"Wrong number of main arguments\n" <<
+			"Expected 1 argument - test number\n" <<
+			"Usage example: ./Ex1Part2Test 3" << std::endl;
+		exit(3);
+	}
+
+	if (atoi(argv[1]) == 1)
+	{
+		result = test1();
+		cout << (result == 0 ? "\033[1;32m \n****** Part 3 Test 1 Passed ******\033[0m\n \n" : "\033[1;31mPart 3 Test 1 Failed\033[0m\n \n") << endl;
+		return result;
+	}
+	else if (atoi(argv[1]) == 2)
+	{
+		result = test2();
+		cout << (result == 0 ?  "\033[1;32m \n****** Part 3 Test 2 Passed ******\033[0m\n \n" : "\033[1;31mPart 3 Test 2 Failed\033[0m\n \n") << endl;
+		return result;
+	}
+	else if (atoi(argv[1]) == 3)
+	{
+		result = test3();
+		cout << (result == 0 ?  "\033[1;32m \n****** Part 4 Test 1 Passed ******\033[0m\n \n" : "\033[1;31mPart 4 Test 1 Failed\033[0m\n \n") << endl;
+		return result;
+	}
+
 	return result;
 }

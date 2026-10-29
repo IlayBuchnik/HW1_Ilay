@@ -43,8 +43,13 @@ Node* removeElement(Node* head)
 	current->next = nullptr;
 	return head;
 }
+
 void printList(Node* head)
 {
+	if (head == nullptr)
+	{
+		return;
+	}
 	while (head != nullptr)
 	{
 		std::cout << head->data << std::endl;

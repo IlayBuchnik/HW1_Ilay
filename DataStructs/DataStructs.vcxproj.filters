@@ -15,33 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\LinkedList.cpp">
+    <ClCompile Include="LinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Queue.cpp">
+    <ClCompile Include="Part2Tester_local (1).cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Stack.cpp">
+    <ClCompile Include="Queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Part2Tester_local (1).cpp">
+    <ClCompile Include="Stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Utils.cpp">
+    <ClCompile Include="Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Queue.h">
+    <ClInclude Include="LinkedList.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Stack.h">
+    <ClInclude Include="Queue.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\LinkedList.h">
+    <ClInclude Include="Stack.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Utils.h">
+    <ClInclude Include="Utils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

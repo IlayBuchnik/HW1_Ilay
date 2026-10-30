@@ -43,7 +43,6 @@ int test1()
 		{
 				// stack failed to initialize - test failed
 				cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
-				system("./printMessage 1211");
 				cout << " \n" << endl;
 				return 1211;
 		}
@@ -61,7 +60,6 @@ int test1()
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
-			system("./printMessage 1212");
 			cout << " \n" << endl;
 			return 1212;
 		}
@@ -89,7 +87,6 @@ int test1()
 			cout << "Expected: " << stack0PoppedElements << "\n"
 				<< "Got     : " << output
 				<< " \n " << endl;
-			system("./printMessage 1214");
 			cout << " \n" << endl;
 			return 1214;
 		}
@@ -106,7 +103,6 @@ int test1()
 		catch(const std::exception& e)
 		{
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
-			system("./printMessage 1215");
 			cout << " \n " << endl;
 			cout << "Received the following error: " << e.what() << "\n"
 				<< " \n " << endl;
@@ -143,7 +139,6 @@ int test2()
 		{
 				// stack failed to initialize - test failed
 				cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
-				system("./printMessage 1211");
 				cout << " \n" << endl;
 				return 1211;
 		}
@@ -162,7 +157,6 @@ int test2()
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
-			system("./printMessage 1212");
 			cout << " \n" << endl;
 			return 1212;
 		}
@@ -179,7 +173,6 @@ int test2()
 		catch(...)
 		{
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
-			system("./printMessage 1216");
 			cout << " \n" << endl;
 			return 1216;
 		}
@@ -197,7 +190,6 @@ int test2()
 		catch(...)
 		{
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
-			system("./printMessage 1217");
 			cout << " \n" << endl;
 			return 1217;
 		}
@@ -217,7 +209,6 @@ int test2()
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: false\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
-			system("./printMessage 1218");
 			cout << " \n" << endl;
 			return 1218;
 		}
@@ -235,7 +226,6 @@ int test2()
 		catch(...)
 		{
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
-			system("./printMessage 1217");
 			cout << " \n" << endl;
 			return 1217;
 		}
@@ -256,7 +246,6 @@ int test2()
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
 			cout << "Expected: true\n" 
 			<< "Got     : " << (empty ? "true" : "false") << " \n";
-			system("./printMessage 1219");
 			cout << " \n" << endl;
 			return 1219;
 		}
@@ -273,7 +262,6 @@ int test2()
 		catch(const std::exception& e)
 		{
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
-			system("./printMessage 1215");
 			cout << " \n " << endl;
 			cout << "Received the following error: " << e.what() << "\n"
 				<< " \n " << endl;
@@ -331,7 +319,6 @@ bool test3()
 		else
 		{
 			cout << "\033[1;31mTest Failed\033[0m\n \n" << endl;
-			system("./printMessage 1311");
 			cout << "Using reverse() on array and printing it... " << endl
 			<< "Expected: " << reversedArray << "\n"
 			<< "Got     : " << resultfromReverse
@@ -353,7 +340,7 @@ bool test3()
 
 int main(int argc, char* argv[])
 {
-	int result;
+	int result = 0;
 	// check num of arguments
 	if (argc < 2 || argc > 3)
 	{

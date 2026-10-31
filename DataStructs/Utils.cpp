@@ -2,6 +2,7 @@
 #include "Stack.h"
 #include "iostream"
 #define SIZE 10
+// reverses an integer array
 void reverse(int* nums, unsigned int size)
 {
 	int i;
@@ -18,6 +19,7 @@ void reverse(int* nums, unsigned int size)
 	cleanStack(temp);
 	delete temp;
 }
+// reverses an array with elements chosen by the user
 int* reverse10()
 {
 	int arr[SIZE], i;

@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include <iostream>
+// adds an element to the top of the list
 Node* addElement(Node* head, unsigned int data)
 {
 	Node* current;
@@ -20,6 +21,7 @@ Node* addElement(Node* head, unsigned int data)
 	current->next->next = nullptr;
 	return head;
 }
+// removes the element at the top of the list
 Node* removeElement(Node* head)
 {
 	Node* current;
@@ -43,7 +45,7 @@ Node* removeElement(Node* head)
 	current->next = nullptr;
 	return head;
 }
-
+// prints the list
 void printList(Node* head)
 {
 	if (head == nullptr)

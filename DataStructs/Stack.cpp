@@ -1,9 +1,11 @@
 #include "Stack.h"
 #include "LinkedList.h"
-void push(Stack* s, unsigned int element) // add the last
+// adds an element to the top of the stack
+void push(Stack* s, unsigned int element) 
 {
 	s->head = addElement(s->head, element);
 }
+// removes an element from the top of the list and returns it
 int pop(Stack* s)
 {
     int element;
@@ -33,9 +35,10 @@ int pop(Stack* s)
     delete temp;
     return element;
 }
+
 void initStack(Stack* s)
 {
-	s->head = nullptr;
+	s->head = nullptr; // when addElement gets a null stack array it allocates memory to it
 }
 void cleanStack(Stack* s)
 {
